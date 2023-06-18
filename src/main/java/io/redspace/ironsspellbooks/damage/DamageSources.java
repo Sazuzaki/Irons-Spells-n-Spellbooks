@@ -55,9 +55,9 @@ public class DamageSources {
                 livingAttacker.setLastHurtMob(target);
             }
 
-            if(damageSchool == SchoolType.FIRE){
-                damageSource.setIsFire();
-            }
+//            if(damageSchool == SchoolType.FIRE){
+//                damageSource.setIsFire();
+//            }
 
             var flag = livingTarget.hurt(damageSource, adjustedDamage);
             if (fromSummon)
