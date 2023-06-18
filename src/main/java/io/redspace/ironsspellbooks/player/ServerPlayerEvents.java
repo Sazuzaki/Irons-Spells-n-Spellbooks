@@ -28,6 +28,7 @@ import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
+import net.minecraft.world.entity.animal.Animal;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.phys.EntityHitResult;
 import net.minecraftforge.event.ItemAttributeModifierEvent;
@@ -240,6 +241,12 @@ public class ServerPlayerEvents {
             serverPlayer.clearFire();
             serverPlayer.setTicksFrozen(0);
         }
+
+        if(event.getEntity() instanceof Animal animal && event.getSource().isFire()){
+            event.getEntity().setSecondsOnFire(1);
+            event.getEntity().setSharedFlagOnFire(true);
+        }
+
     }
 
     @SubscribeEvent

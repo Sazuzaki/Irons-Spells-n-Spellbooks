@@ -54,6 +54,11 @@ public class DamageSources {
                     return false;
                 livingAttacker.setLastHurtMob(target);
             }
+
+            if(damageSchool == SchoolType.FIRE){
+                damageSource.setIsFire();
+            }
+
             var flag = livingTarget.hurt(damageSource, adjustedDamage);
             if (fromSummon)
                 livingTarget.setLastHurtByMob((LivingEntity) damageSource.getDirectEntity());
