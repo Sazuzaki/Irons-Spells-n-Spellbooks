@@ -45,7 +45,7 @@ public class CounterspellSpell extends AbstractSpell {
 
     public CounterspellSpell(int level) {
         super(SpellType.COUNTERSPELL_SPELL);
-        this.level = level;
+        this.setLevel(level);
         this.manaCostPerLevel = 1;
         this.baseSpellPower = 1;
         this.spellPowerPerLevel = 1;

@@ -10,7 +10,7 @@ import org.jetbrains.annotations.Nullable;
 import java.util.List;
 
 public class SimpleDescriptiveCurio extends CurioBaseItem {
-    final static net.minecraft.network.chat.Component whenWornAsRing = Component.translatable("curios.modifiers.ring").withStyle(ChatFormatting.GOLD);
+    protected final static net.minecraft.network.chat.Component whenWornAsRing = Component.translatable("curios.modifiers.ring").withStyle(ChatFormatting.GOLD);
     final net.minecraft.network.chat.Component description;
 
     public SimpleDescriptiveCurio(Properties properties, net.minecraft.network.chat.Component description) {

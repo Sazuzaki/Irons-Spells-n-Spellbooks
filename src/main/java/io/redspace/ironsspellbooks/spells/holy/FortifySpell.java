@@ -45,7 +45,7 @@ public class FortifySpell extends AbstractSpell {
 
     public FortifySpell(int level) {
         super(SpellType.FORTIFY_SPELL);
-        this.level = level;
+        this.setLevel(level);
         this.manaCostPerLevel = 5;
         this.baseSpellPower = 6;
         this.spellPowerPerLevel = 1;

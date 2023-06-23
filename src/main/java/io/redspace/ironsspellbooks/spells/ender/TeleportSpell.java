@@ -40,7 +40,7 @@ public class TeleportSpell extends AbstractSpell {
 
     public TeleportSpell(int level) {
         super(SpellType.TELEPORT_SPELL);
-        this.level = level;
+        this.setLevel(level);
         this.baseSpellPower = 10;
         this.spellPowerPerLevel = 10;
         this.baseManaCost = 20;
@@ -133,7 +133,7 @@ public class TeleportSpell extends AbstractSpell {
         }
     }
 
-    private float getDistance(Entity sourceEntity) {
+    private float getDistance(LivingEntity sourceEntity) {
         return getSpellPower(sourceEntity);
     }
 

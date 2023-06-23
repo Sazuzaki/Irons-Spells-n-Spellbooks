@@ -33,6 +33,7 @@ public class HealingCircleSpell extends AbstractSpell {
                 Component.translatable("ui.irons_spellbooks.duration", Utils.timeFromTicks(getDuration(caster), 1))
         );
     }
+
     public static DefaultConfig defaultConfig = new DefaultConfig()
             .setMinRarity(SpellRarity.COMMON)
             .setSchool(SchoolType.HOLY)

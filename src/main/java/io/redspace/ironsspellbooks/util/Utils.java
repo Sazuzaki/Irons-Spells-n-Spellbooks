@@ -16,8 +16,6 @@ import io.redspace.ironsspellbooks.network.spell.ClientboundSyncTargetingData;
 import io.redspace.ironsspellbooks.player.ClientMagicData;
 import io.redspace.ironsspellbooks.setup.Messages;
 import io.redspace.ironsspellbooks.spells.*;
-import io.redspace.ironsspellbooks.tetra.TetraProxy;
-import io.redspace.ironsspellbooks.util.Component;
 import net.minecraft.ChatFormatting;
 import net.minecraft.client.Minecraft;
 import net.minecraft.core.BlockPos;
@@ -379,25 +377,29 @@ public class Utils {
         );
     }
 
+
     public static boolean shouldHealEntity(LivingEntity healer, LivingEntity target) {
+        if (healer instanceof NeutralMob neutralMob && neutralMob.isAngryAt(target))
+            return false;
         if (healer == target)
             return true;
-        if (target.getType().is(ModTags.ALWAYS_HEAL) && !(healer.getMobType() == MobType.UNDEAD || healer.getMobType() == MobType.ILLAGER)) {
+        if (target.getType().is(ModTags.ALWAYS_HEAL) && !(healer.getMobType() == MobType.UNDEAD || healer.getMobType() == MobType.ILLAGER))
             //This tag is for things like iron golems, villagers, farm animals, etc
             return true;
-        } else if (healer.isAlliedTo(target)) {
+        if (healer.isAlliedTo(target))
             //Generic ally-check. Precursory team check plus some mobs override it, such as summons
             return true;
-        } else if (healer.getTeam() != null) {
+        if (healer.getTeam() != null)
             //If we are on a team, only heal teammates
             return target.isAlliedTo(healer.getTeam());
-        } else if (healer instanceof Player) {
+        if (healer instanceof Player) {
             //If we are a player and not on a team, we only want to heal other players
             return target instanceof Player;
         } else {
             return healer.getMobType() == target.getMobType();
         }
     }
+
 
     public static boolean canImbue(ItemStack itemStack) {
         String id = Registry.ITEM.getKey(itemStack.getItem()).toString();
@@ -408,7 +410,7 @@ public class Utils {
         if ((itemStack.getItem() instanceof SwordItem swordItem && !(swordItem instanceof UniqueItem)))
             return true;
 
-        return TetraProxy.PROXY.canImbue(itemStack);
+        return false;
     }
 
     public static InteractionResultHolder<ItemStack> onUseCastingHelper(@NotNull Level level, Player player, @NotNull InteractionHand hand, ItemStack stack, AbstractSpell spell) {
