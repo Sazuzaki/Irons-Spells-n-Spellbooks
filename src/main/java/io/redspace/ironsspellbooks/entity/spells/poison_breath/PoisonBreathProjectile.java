@@ -57,7 +57,7 @@ public class PoisonBreathProjectile extends AbstractConeProjectile {
     protected void onHitEntity(EntityHitResult entityHitResult) {
         //irons_spellbooks.LOGGER.debug("ConeOfColdProjectile.onHitEntity: {}", entityHitResult.getEntity().getName().getString());
         var entity = entityHitResult.getEntity();
-        if (DamageSources.applyDamage(entity, damage, SpellType.POISON_BREATH_SPELL.getDamageSource(this, getOwner()), SchoolType.POISON) && entity instanceof LivingEntity livingEntity)
+        if (DamageSources.applyDamage(entity, damage, SpellType.POISON_BREATH_SPELL.getDamageSource(this, getOwner()), SchoolType.NATURE) && entity instanceof LivingEntity livingEntity)
             livingEntity.addEffect(new MobEffectInstance(MobEffects.POISON, 100, 0));
     }
 

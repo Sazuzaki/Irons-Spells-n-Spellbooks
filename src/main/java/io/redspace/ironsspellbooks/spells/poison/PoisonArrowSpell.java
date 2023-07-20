@@ -27,7 +27,7 @@ public class PoisonArrowSpell extends AbstractSpell {
 
     public static DefaultConfig defaultConfig = new DefaultConfig()
             .setMinRarity(SpellRarity.COMMON)
-            .setSchool(SchoolType.POISON)
+            .setSchool(SchoolType.NATURE)
             .setMaxLevel(10)
             .setCooldownSeconds(15)
             .build();

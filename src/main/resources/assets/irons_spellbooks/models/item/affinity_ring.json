@@ -47,9 +47,15 @@
     },
     {
       "predicate": {
+        "school": 7
+      },
+      "model": "irons_spellbooks:item/affinity_ring_ender"
+    },
+    {
+      "predicate": {
         "school": 8
       },
-      "model": "irons_spellbooks:item/affinity_ring_poison"
+      "model": "irons_spellbooks:item/affinity_ring_nature"
     }
   ]
 }
