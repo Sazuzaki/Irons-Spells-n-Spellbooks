@@ -36,7 +36,7 @@ public class IcicleSpell extends AbstractSpell {
         this.manaCostPerLevel = 2;
         this.baseSpellPower = 12;
         this.spellPowerPerLevel = 1;
-        this.castTime = 15;
+        this.castTime = 30;
         this.baseManaCost = 10;
     }
 
