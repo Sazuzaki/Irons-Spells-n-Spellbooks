@@ -38,7 +38,7 @@ public class CryomancerEntity extends AbstractSpellCastingMob implements Enemy {
         this.goalSelector.addGoal(2, new SpellBarrageGoal(this, SpellType.ICE_BLOCK_SPELL, 3, 6, 100, 250, 1));
         this.goalSelector.addGoal(3, new WizardAttackGoal(this, 1.25f, 50, 75)
                 .setSpells(
-                        List.of(SpellType.ICICLE_SPELL, SpellType.ICICLE_SPELL, SpellType.ICICLE_SPELL, SpellType.CONE_OF_COLD_SPELL),
+                        List.of(SpellType.ICICLE_SPELL, SpellType.ICICLE_SPELL, SpellType.ICICLE_SPELL),
                         List.of(SpellType.COUNTERSPELL_SPELL),
                         List.of(SpellType.FROST_STEP_SPELL),
                         List.of()
