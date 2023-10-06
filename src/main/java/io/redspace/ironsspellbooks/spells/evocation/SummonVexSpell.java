@@ -43,7 +43,7 @@ public class SummonVexSpell extends AbstractSpell {
         this.manaCostPerLevel = 10;
         this.baseSpellPower = 1;
         this.spellPowerPerLevel = 0;
-        this.castTime = 20;
+        this.castTime = 70;
         this.baseManaCost = 50;
     }
 
