@@ -46,7 +46,7 @@ public class VoidTentaclesSpell extends AbstractSpell {
         this.manaCostPerLevel = 50;
         this.baseSpellPower = 6;
         this.spellPowerPerLevel = 2;
-        this.castTime = 20;
+        this.castTime = 40;
         this.baseManaCost = 150;
     }
 
