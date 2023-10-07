@@ -36,7 +36,7 @@ public class MagicMissileSpell extends AbstractSpell {
         this.manaCostPerLevel = 2;
         this.baseSpellPower = 12;
         this.spellPowerPerLevel = 1;
-        this.castTime = 10;
+        this.castTime = 25;
         this.baseManaCost = 10;
     }
 
